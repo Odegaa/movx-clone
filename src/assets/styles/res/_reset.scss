@@ -1,6 +1,11 @@
+@import "../var/var";
+
 *,
 *:before,
 *:after {
+  margin: 0;
+  padding: 0;
+  outline: none;
   box-sizing: border-box;
 }
 
@@ -76,6 +81,8 @@ main {
 
 body {
   line-height: 1;
+  background-color: #eee;
+  font-family: $font-primary;
 }
 
 ol,
@@ -103,4 +110,16 @@ table {
 
 input {
   border-radius: 0;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 20px;
+  max-width: 1350px;
+  width: 100%;
+}
+
+section {
+  margin-top: 100px;
+  min-height: 100vh;
 }
