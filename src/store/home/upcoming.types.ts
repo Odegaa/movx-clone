@@ -31,3 +31,20 @@ export interface Result {
   vote_average: number;
   vote_count: number;
 }
+
+export interface IOptions {
+  method: string;
+  url: string;
+  params: IParams;
+  headers: IHeader;
+}
+
+interface IParams {
+  language: string;
+  page: string;
+}
+
+interface IHeader {
+  accept: string;
+  Authorization: string;
+}
