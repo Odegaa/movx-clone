@@ -1,10 +1,10 @@
 import React from "react";
 import Header from "./header/Header";
-import Footer from "./footer/Footer";
+import { Footer } from "./footer/Footer";
 import { Outlet, useLocation } from "react-router-dom";
 import { useLabel } from "src/hook/label/useLabel";
-import UiSwitch from "../ui/switch/UiSwitch";
 import style from "./Layout.module.scss";
+import UiSwitch from "../ui/switch/UiSwitch";
 
 const Layout: React.FC = () => {
   const { pathname } = useLocation();

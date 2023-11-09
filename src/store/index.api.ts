@@ -1,8 +1,8 @@
-import { baseUrl } from "src/config/baseUrl";
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+import { baseUrl } from "src/config/baseUrl";
 
 export const api = createApi({
-  reducerPath: "films",
+  reducerPath: "movies",
   baseQuery: fetchBaseQuery({
     baseUrl,
     headers: {
@@ -12,10 +12,10 @@ export const api = createApi({
     },
   }),
   refetchOnFocus: true,
-  tagTypes: ["films"],
-  endpoints: (builder) => ({
-    default: builder.query({
-      query: () => ({ url: "default", method: "get" }),
+  tagTypes: ["movies"],
+  endpoints: (build) => ({
+    getMovies: build.query({
+      query: () => "default",
     }),
   }),
 });

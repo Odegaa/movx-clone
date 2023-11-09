@@ -5,4 +5,5 @@ export * from "./tvShows/TvShows";
 export * from "./actors/Actors";
 export * from "./category/Category";
 export * from "./favorites/Favorites";
+export * from "./upcoming/Upcoming";
 export * from "./notFound/NotFoundPage";

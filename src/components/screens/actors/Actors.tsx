@@ -1,11 +1,12 @@
 import React from "react";
+import { Container } from "src/components/ui";
 
 const Actors: React.FC = () => {
   return (
     <section className="actors">
-      <div className="container">
+      <Container>
         <div className="actorsInner">Actors</div>
-      </div>
+      </Container>
     </section>
   );
 };

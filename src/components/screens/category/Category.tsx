@@ -1,11 +1,12 @@
 import React from "react";
+import { Container } from "src/components/ui";
 
 const Category: React.FC = () => {
   return (
     <section className="category">
-      <div className="container">
+      <Container>
         <div className="categoryInner">Category</div>
-      </div>
+      </Container>
     </section>
   );
 };

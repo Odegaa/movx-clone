@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 import clsx from "clsx";
 
 import HeaderLink from "./links/HeaderLink";
-import { UiSearch } from "src/components/ui";
-
+import { Container, UiSearch } from "src/components/ui";
 import logo from "src/assets/icons/logo-full.png";
+
 import style from "./Header.module.scss";
 
 const Header: React.FC = () => {
@@ -19,7 +19,7 @@ const Header: React.FC = () => {
 
   return (
     <header className={clsx(style.header, nav && style.active)}>
-      <div className="container">
+      <Container>
         <div className={style.headerInner}>
           <div className={style.links}>
             <Link to="/" className={style.logo}>
@@ -29,7 +29,7 @@ const Header: React.FC = () => {
           </div>
           <UiSearch />
         </div>
-      </div>
+      </Container>
     </header>
   );
 };

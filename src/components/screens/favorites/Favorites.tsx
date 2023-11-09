@@ -1,11 +1,11 @@
-import React from "react";
+import React from "react";import { Container } from "src/components/ui";
 
 const Favorites: React.FC = () => {
   return (
     <section className="favorites">
-      <div className="container">
+      <Container>
         <div className="favoritesInner">Favorites</div>
-      </div>
+      </Container>
     </section>
   );
 };

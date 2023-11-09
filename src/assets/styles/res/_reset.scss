@@ -113,7 +113,7 @@ input {
 }
 
 .container {
-  margin-top: 100px;
+  position: relative;
   margin: 0 auto;
   padding: 0 20px;
   max-width: 1350px;
@@ -122,4 +122,10 @@ input {
 
 section {
   min-height: 100vh;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  width: 50px;
+  height: 50px;
 }

@@ -1,3 +1,13 @@
-import { upComingApi } from "./home/upcoming.api";
+import { movieApi } from "./movies/movie.api";
 
-export const { useGetUpComingMoviesQuery } = upComingApi;
+export const {
+  useGetUpcomingMoviesQuery,
+  useGetTopRatedMoviesQuery,
+  useGetTrendingMoviesQuery,
+  useGetDiscoverMoviesQuery,
+  useGetPopularMoviesQuery,
+  useGetActorsQuery,
+  useGetCategoriesQuery,
+  useGetFavoritesQuery,
+  useGetDetailsQuery,
+} = movieApi;

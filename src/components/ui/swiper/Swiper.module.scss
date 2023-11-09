@@ -1,16 +1,47 @@
-.swiperBlock {
-  min-height: 100vh;
-  overflow: hidden;
-}
-
-.mySwiper {
-  width: 100%;
+.swiper {
   height: 100%;
-}
-
-.swiperSlide {
-  background-position: center;
-}
-
-.swiperSlide img {
+  width: 100%;
+  .topMovie {
+    position: absolute;
+    z-index: 999;
+    top: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: 100px;
+    color: #fff;
+    .info {
+      position: relative;
+      .title {
+        font-size: 44px;
+        font-weight: 600;
+        margin-bottom: 15px;
+      }
+      .rating {
+        font-size: 20px;
+        margin-bottom: 10px;
+      }
+      .hashtags {
+        font-size: 20px;
+        margin-left: 20px;
+      }
+      .desc {
+        font-size: 18px;
+        width: 600px;
+        height: 100px;
+        overflow: hidden;
+        margin: 10px 0 20px;
+      }
+    }
+    .swiperImg {
+      display: block;
+      width: 300px;
+    }
+  }
+  .backdropImage {
+    filter: brightness(30%);
+    width: 100%;
+    height: 100%;
+  }
 }
