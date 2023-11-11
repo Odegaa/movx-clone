@@ -1,9 +1,36 @@
 export interface IRootState {
+  filters: IFilterProps;
   category: ICategoryState;
   movies: IMovieState;
   actors: IActorState;
   search: ISearchState;
   favorites: IMovieData[] | [];
+}
+
+export interface IFilterProps {
+  category: string;
+  sort: TSortType;
+  year: string;
+  query: string;
+}
+
+export interface IFilterState {
+  tv: IFilterProps;
+  discover: IFilterProps;
+}
+
+export type TSortType =
+  | "popularity.desc"
+  | "popularity.asc"
+  | "release_date.desc"
+  | "release_date.asc"
+  | "vote_count.desc"
+  | "vote_count.asc"
+  | "original_title.asc"
+  | "original_title.desc";
+
+export interface IGenre {
+  genres: ICategory[];
 }
 
 export interface ICategoryState {

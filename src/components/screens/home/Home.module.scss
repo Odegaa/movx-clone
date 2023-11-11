@@ -1,20 +1,15 @@
-.home {
-  min-height: 100vh;
-  .homeInner {
-    position: relative;
+.homeInner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  padding: 50px 0;
+  .titles {
+    padding: 20px 0;
+  }
+  .link {
     display: flex;
-    flex-direction: column;
-    gap: 20px;
-    padding: 50px 0;
-    .moviesCount {
-      font-size: 18px;
-      color: #656565;
-      font-weight: 500;
-    }
-    
-    .pagination {
-      text-align: center;
-      margin: 50px 0;
-    }
+    justify-content: center;
+    align-items: center;
   }
 }

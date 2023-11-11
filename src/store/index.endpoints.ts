@@ -6,6 +6,7 @@ export const {
   useGetTrendingMoviesQuery,
   useGetDiscoverMoviesQuery,
   useGetPopularMoviesQuery,
+  useGetTvShowsQuery,
   useGetActorsQuery,
   useGetCategoriesQuery,
   useGetFavoritesQuery,

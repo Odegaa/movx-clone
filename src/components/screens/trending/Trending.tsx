@@ -4,6 +4,7 @@ import {
   UiError,
   UiPagination,
   UiSkeleton,
+  UiSubtitle,
   UiTitle,
 } from "src/components/ui";
 
@@ -23,15 +24,13 @@ const Trending: React.FC = () => {
         {data && data.results.length && (
           <div className={style.trendingInner}>
             <UiTitle>Trending Movies</UiTitle>
-            <span className={style.moviesCount}>
-              {data?.total_results} movies
-            </span>
+            <UiSubtitle data={data?.total_results}> movies</UiSubtitle>
             <Cards data={data?.results} />
             <UiPagination
-              className={style.pagination}
-              current={page}
+              defaultCurrent={page}
               onChange={(e) => setPage(e)}
-              total={data?.total_pages}
+              total={data?.total_results}
+              defaultPageSize={data?.total_pages}
             />
           </div>
         )}

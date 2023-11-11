@@ -21,11 +21,12 @@ const Cards: React.FC<IProps> = ({ data }: IProps) => (
             <span className={style.rating}>
               &times; {Math.floor(movie.vote_average * 10) / 10}
             </span>
-            <img
-              className={style.img}
-              src={imageUrl + movie.backdrop_path}
-              alt={movie.original_title}
-            />
+            <div className={style.img}>
+              <img
+                src={imageUrl + movie.backdrop_path}
+                alt={movie.original_title}
+              />
+            </div>
             <Link to={""} className={style.link}></Link>
           </div>
           <div className={style.info}>

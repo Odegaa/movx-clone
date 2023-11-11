@@ -1,4 +1,4 @@
-import { IActor, ICategory, IMovieData, IResponse } from "src/types";
+import { IActor, IGenre, IMovieData, IResponse } from "src/types";
 import { api } from "../index.api";
 
 export const movieApi = api.injectEndpoints({
@@ -33,13 +33,22 @@ export const movieApi = api.injectEndpoints({
       }),
       providesTags: ["movies"],
     }),
+    getTvShows: build.query<IResponse<IMovieData[]>, number>({
+      query: (page = 1) => ({
+        url: `discover/tv`,
+        params: {
+          page,
+        },
+      }),
+      providesTags: ["movies"],
+    }),
     getActors: build.query<IResponse<IActor>, number>({
       query: (page: number) => ({
         url: `person/popular?language=en-US&page=${page}`,
       }),
       providesTags: ["movies"],
     }),
-    getCategories: build.query<IResponse<ICategory>, void>({
+    getCategories: build.query<IGenre, void>({
       query: () => ({ url: "genre/movie/list" }),
       providesTags: ["movies"],
     }),
