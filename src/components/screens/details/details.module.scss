@@ -1,0 +1,33 @@
+.details {
+  min-height: 100vh;
+  .movieOverview {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    .overviewInner {
+      backdrop-filter: brightness(30%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 50px;
+      padding: 0 150px;
+      min-height: 100vh;
+      .movieImg {
+        max-width: 250px;
+        img {
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+      .info {
+        color: #fff;
+        position: relative;
+      }
+    }
+  }
+  .detailsInner {
+    position: relative;
+    min-height: 100vh;
+  }
+}

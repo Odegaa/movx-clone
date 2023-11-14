@@ -3,6 +3,12 @@ import { api } from "../index.api";
 
 export const movieApi = api.injectEndpoints({
   endpoints: (build) => ({
+    getMovieById: build.query<IMovieData, number>({
+      query: (id: number) => ({
+        url: `movie/${id}`,
+      }),
+      providesTags: ["movies"],
+    }),
     getUpcomingMovies: build.query<IResponse<IMovieData[]>, number>({
       query: (page: number) => ({
         url: `movie/upcoming?language=en-US&page=${page}`,
@@ -42,9 +48,15 @@ export const movieApi = api.injectEndpoints({
       }),
       providesTags: ["movies"],
     }),
-    getActors: build.query<IResponse<IActor>, number>({
+    getActors: build.query<IResponse<IActor[]>, number>({
       query: (page: number) => ({
         url: `person/popular?language=en-US&page=${page}`,
+      }),
+      providesTags: ["movies"],
+    }),
+    getActorById: build.query<IActor, number>({
+      query: (id: number) => ({
+        url: `person/${id}?language=en-US`,
       }),
       providesTags: ["movies"],
     }),
@@ -54,10 +66,6 @@ export const movieApi = api.injectEndpoints({
     }),
     getFavorites: build.query<IResponse<IMovieData[]>, number>({
       query: (id: number) => ({ url: `account/${id}/favorite` }),
-      providesTags: ["movies"],
-    }),
-    getDetails: build.query<IResponse<IMovieData[]>, number>({
-      query: (id: number) => ({ url: `movie/${id}` }),
       providesTags: ["movies"],
     }),
   }),

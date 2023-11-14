@@ -10,6 +10,7 @@ import "swiper/css/navigation";
 import "swiper/css/effect-fade";
 
 import style from "./Swiper.module.scss";
+import { Link } from "react-router-dom";
 
 const UiSwiper: React.FC<{ data?: IMovieData[] }> = ({ data }) => (
   <Swiper
@@ -30,7 +31,9 @@ const UiSwiper: React.FC<{ data?: IMovieData[] }> = ({ data }) => (
                   <div className={style.rating}>{movie.vote_average}</div>
                   <div className={style.hashtags}>{movie.category_ids}</div>
                   <p className={style.desc}>{movie.overview}</p>
-                  <UiButton>View Mode</UiButton>
+                  <Link to={`/movie/${movie.id}`}>
+                    <UiButton>View Mode</UiButton>
+                  </Link>
                 </div>
                 <div className={style.swiperImg}>
                   <img

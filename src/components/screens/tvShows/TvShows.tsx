@@ -9,11 +9,12 @@ import {
 } from "src/components/ui";
 import { useGetTvShowsQuery } from "src/store/index.endpoints";
 import style from "./tvshows.module.scss";
+import { Cards } from "src/components/layouts/cards/Cards";
+import { NotFoundPage } from "..";
 
 const TvShows: React.FC = () => {
   const [page, setPage] = React.useState(1);
   const { data, isLoading, isError } = useGetTvShowsQuery(page);
-  console.log(data?.results);
 
   return (
     <section className={style.tv}>
@@ -24,6 +25,11 @@ const TvShows: React.FC = () => {
           <div className={style.tvInner}>
             <UiTitle>Tv Shows</UiTitle>
             <UiSubtitle data={data?.total_results}> tv shows</UiSubtitle>
+            {data && data.results.length ? (
+              <Cards data={data.results} />
+            ) : (
+              <NotFoundPage />
+            )}
             <UiPagination
               defaultCurrent={page}
               onChange={(e) => setPage(e)}

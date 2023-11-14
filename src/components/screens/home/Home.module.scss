@@ -1,15 +1,17 @@
-.homeInner {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 50px;
-  padding: 50px 0;
-  .titles {
-    padding: 20px 0;
-  }
-  .link {
+.home {
+  .homeInner {
+    padding: 50px 0;
+    position: relative;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    gap: 50px;
+    .titles {
+      padding: 20px 0;
+    }
+    .link {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   }
 }

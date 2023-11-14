@@ -1,0 +1,25 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  div {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    img {
+      width: 100%;
+    }
+    .link {
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+    }
+  }
+  .name {
+    font-size: 20px;
+    color: #000;
+  }
+}

@@ -1,7 +1,9 @@
-.tvInner {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+.tv {
   padding: 100px 0;
+  .tvInner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
 }
