@@ -1,23 +1,51 @@
 import React from "react";
 import style from "./details.module.scss";
-import { useGetMovieByIdQuery } from "src/store/index.endpoints";
-import { Container, UiError, UiSkeleton, UiTitle } from "src/components/ui";
+import {
+  useGetMovieByIdQuery,
+  useGetMovieCreditsQuery,
+  useGetMovieKeywordsQuery,
+} from "src/store/index.endpoints";
+import {
+  Container,
+  UiButton,
+  UiError,
+  UiSkeleton,
+  UiTitle,
+} from "src/components/ui";
 import { NotFoundPage } from "..";
 import { imageUrl } from "src/config/baseUrl";
+import { ActorCard } from "src/components/layouts/actorCard/ActorCard";
+import DetailsInfo from "./info/DetailsInfo";
+import { Link } from "react-router-dom";
 
 const MovieDetails: React.FC = () => {
   const movieId = +window.location.href.substring(
     window.location.href.lastIndexOf("/") + 1
   );
-  const { data: movie, isLoading, isError } = useGetMovieByIdQuery(movieId);
-  console.log(movie);
+
+  const {
+    data: movie,
+    isLoading: isMovieLoading,
+    isError: isMovieError,
+  } = useGetMovieByIdQuery(movieId);
+
+  const { data: keywords } = useGetMovieKeywordsQuery(movieId);
+
+  const {
+    data: casts,
+    isLoading: isCastLoading,
+    isError: isCastError,
+  } = useGetMovieCreditsQuery(movieId);
+
+  const actors = casts?.cast;
+  console.log(actors);
 
   return (
     <section className={style.details}>
       <Container>
-        {isLoading ? (
+        {isMovieLoading ? (
           <UiSkeleton />
-        ) : isError ? (
+        ) : isMovieError ? (
           <UiError />
         ) : movie ? (
           <>
@@ -40,7 +68,32 @@ const MovieDetails: React.FC = () => {
                 </div>
               </div>
             </div>
-            <div className={style.detailsInner}>Details</div>
+            <div className={style.detailsInner}>
+              <div className={style.left}>
+                <UiTitle>Top Billed Casts</UiTitle>
+                <div className={style.actors}>
+                  {isCastLoading ? (
+                    <UiSkeleton />
+                  ) : isCastError ? (
+                    <UiError />
+                  ) : actors && actors?.length ? (
+                    actors
+                      .slice(0, 12)
+                      .map((actor) => (
+                        <ActorCard key={actor.id} actor={actor} />
+                      ))
+                  ) : (
+                    <NotFoundPage />
+                  )}
+                </div>
+                <Link>
+                  <UiButton data-center>View all casts</UiButton>
+                </Link>
+              </div>
+              <div className={style.detailsInfo}>
+                <DetailsInfo movie={movie} keywords={keywords} />
+              </div>
+            </div>
           </>
         ) : (
           <NotFoundPage />

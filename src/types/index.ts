@@ -1,3 +1,7 @@
+export interface ICredits {
+  cast: ICast[];
+}
+
 export interface IRootState {
   filters: IFilterProps;
   category: ICategoryState;
@@ -90,7 +94,7 @@ export interface IMovieData {
   vote_count: number;
   title: string;
   homepage: string;
-  category: ICategory[];
+  genres: ICategory[];
   overview: string;
   popularity: number;
   budget: number;
@@ -134,6 +138,10 @@ export interface IImage {
 export interface ICategory {
   id: number;
   name: string;
+}
+
+export interface IKeywordState {
+  keywords: IKeyword[];
 }
 
 export interface IKeyword {
