@@ -1,0 +1,48 @@
+.discover {
+  min-height: 100vh;
+  .discoverInner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 100px 0;
+    .moviesCount {
+      font-size: 18px;
+      color: #656565;
+      font-weight: 500;
+    }
+    .cards {
+      padding: 25px 0;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 25px;
+      row-gap: 100px;
+    }
+    .pagination {
+      text-align: center;
+      margin: 50px 0;
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .cards {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media (max-width: 900px) {
+  .cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 660px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+}
+@media (max-width: 480px) {
+  .cards {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

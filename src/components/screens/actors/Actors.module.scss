@@ -1,0 +1,15 @@
+.actors {
+  padding: 100px 0;
+  position: relative;
+  .actorsInner {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    .actorsBlock {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 40px;
+      row-gap: 100px;
+    }
+  }
+}

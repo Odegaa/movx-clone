@@ -1,0 +1,30 @@
+.links {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 35px;
+  .link {
+    position: relative;
+    text-decoration: none;
+    color: #212121;
+    font-size: 17px;
+    transition: color 80ms linear;
+  }
+  .active,
+  .link:hover,
+  .link::after {
+    color: #4169e1;
+    display: block;
+  }
+  .link::after {
+    content: "";
+    position: absolute;
+    width: 150%;
+    height: 2px;
+    background-color: #4169e1;
+    left: 0%;
+    right: 0%;
+    top: 250%;
+    display: none;
+  }
+}

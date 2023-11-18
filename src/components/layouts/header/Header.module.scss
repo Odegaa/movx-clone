@@ -1,0 +1,36 @@
+.header {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 9999999999;
+  min-height: 50px;
+  padding: 20px 0;
+  background-color: transparent;
+  transition: background-color 100ms, box-shadow 100ms linear;
+  .headerInner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+    .links {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      .logo {
+        position: relative;
+        img {
+          width: 100px;
+        }
+      }
+    }
+    .search {
+      position: relative;
+    }
+  }
+  &.active {
+    box-shadow: 0 10px 15px rgba($color: #000000, $alpha: 0.2);
+    background-color: #eee;
+    color: #212121 !important;
+  }
+}

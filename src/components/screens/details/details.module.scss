@@ -1,0 +1,50 @@
+.details {
+  min-height: 100vh;
+  .movieOverview {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    .overviewInner {
+      backdrop-filter: brightness(30%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 50px;
+      padding: 0 150px;
+      min-height: 100vh;
+      .movieImg {
+        max-width: 250px;
+        img {
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+      .info {
+        color: #fff;
+        position: relative;
+      }
+    }
+  }
+  .detailsInner {
+    padding-top: 100px;
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    gap: 50px;
+    .left {
+      padding: 20px 0 100px 0;
+      flex: 9;
+      .actors {
+        padding: 50px 0;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        row-gap: 100px;
+      }
+    }
+    .detailsInfo {
+      flex: 2;
+    }
+  }
+}

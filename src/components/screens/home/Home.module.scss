@@ -1,0 +1,26 @@
+.home {
+  .homeInner {
+    padding: 50px 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    div {
+      .cards {
+        padding: 25px 0;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 25px;
+        row-gap: 100px;
+      }
+    }
+    .titles {
+      padding: 20px 0;
+    }
+    .link {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
